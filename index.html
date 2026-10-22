@@ -31,7 +31,6 @@
                 </div>
             </div>
             
-            <!-- Indicateur de rotation 10s -->
             <div class="hidden md:flex items-center space-x-2 bg-rose-50 border border-rose-100 px-4 py-2 rounded-full text-xs font-semibold text-rose-600 shadow-inner">
                 <span class="w-2 h-2 rounded-full bg-rose-600 animate-ping"></span>
                 <span>En vedette : <span id="ticker-city" class="underline">Chargement...</span></span>
@@ -80,7 +79,7 @@
         </div>
     </section>
 
-    <!-- Liste des chambres (200个房源图片/每页，共1万页) -->
+    <!-- Liste des chambres -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div class="flex justify-between items-center mb-8">
             <div>
@@ -95,7 +94,7 @@
         <!-- Grille des chambres -->
         <div id="properties-grid" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"></div>
 
-        <!-- 1万页超长分页控制器 -->
+        <!-- Pagination -->
         <div id="pagination-container" class="flex flex-wrap justify-center items-center gap-1.5 mt-12"></div>
     </main>
 
@@ -109,9 +108,6 @@
 
     <!-- Script JavaScript -->
     <script>
-        const allProperties = [];
-
-        // 动态生成 200 万个蒙特利尔房源（每页 200 个，完美支持 10,000 页）
         (function generate2000000MontrealRooms() {
             const montrealDistricts = [
                 "Montréal - Plateau-Mont-Royal (Quartier culturel & étudiant)", 
@@ -127,7 +123,7 @@
             ];
             const types = ["Entire Apartment", "Entire House", "Entire Villa", "Private Room"];
             
-            // 替换为您指定的图片列表
+            // Vos images personnalisées
             const customImages = [
                 "http://rent.quebec-quebec.net/3.jpg",
                 "http://rent.quebec-quebec.net/5.jpg",
@@ -152,7 +148,7 @@
                     city: district,
                     price: 600 + (i * 17) % 950,
                     rating: parseFloat((4.80 + (i % 20) * 0.01).toFixed(2)),
-                    image: customImages[i % customImages.length], // 使用您的自定义图片
+                    image: customImages[i % customImages.length],
                     type: propType,
                     guests: 1 + (i % 3),
                     bedrooms: 1 + (i % 2),
@@ -164,7 +160,7 @@
         })();
 
         let currentPage = 1;
-        const pageSize = 200; // 每页 200 个房子图片，共 10,000 页
+        const pageSize = 200;
         let currentRotationIndex = 0;
         let countdownTimer = 10;
         let timerInterval = null;
@@ -214,7 +210,7 @@
             renderPaginationControls(totalPages);
         }
 
-        // 点击卡片直接无缝跳转到目标网址 https://www.donlk.com/index8.html[cite: 1]
+        // Redirection vers https://www.donlk.com/index8.html[cite: 1]
         function renderPropertiesGrid(list) {
             const grid = document.getElementById('properties-grid');
             if (list.length === 0) {
@@ -247,7 +243,6 @@
             `).join('');
         }
 
-        // 1万页超长智能分页控制器
         function renderPaginationControls(totalPages) {
             const container = document.getElementById('pagination-container');
             if (totalPages <= 1) { container.innerHTML = ''; return; }
