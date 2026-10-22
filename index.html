@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <span class="text-2xl font-black tracking-tight bg-gradient-to-r from-rose-600 to-indigo-600 bg-clip-text text-transparent">MTL-StudentStay</span>
-                    <span class="block text-xs font-medium text-gray-500">Le premier choix des étudiants  · 2M Chambres</span>
+                    <span class="block text-xs font-medium text-gray-500">Le premier choix des étudiants français · 2M Chambres</span>
                 </div>
             </div>
             
@@ -47,7 +47,7 @@
     <!-- Bannière Hero -->
     <section class="relative bg-gray-900 text-white py-24 overflow-hidden">
         <div class="absolute inset-0 opacity-45">
-            <img id="hero-bg-img" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1600&q=80" alt="Montreal Student Housing" class="w-full h-full object-cover transition-all duration-1000">
+            <img id="hero-bg-img" src="http://rent.quebec-quebec.net/3.jpg" alt="Montreal Student Housing" class="w-full h-full object-cover transition-all duration-1000">
         </div>
         <div class="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent"></div>
         <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -126,18 +126,21 @@
                 "Montréal - Notre-Dame-de-Grâce / NDG (Quartier résidentiel calme)"
             ];
             const types = ["Entire Apartment", "Entire House", "Entire Villa", "Private Room"];
-            const images = [
-                "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80",  图片修改
-                "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1583847268964-b28dc8f51f92?auto=format&fit=crop&w=800&q=80",
-                "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&w=800&q=80"
+            
+            // 替换为您指定的图片列表
+            const customImages = [
+                "http://rent.quebec-quebec.net/3.jpg",
+                "http://rent.quebec-quebec.net/5.jpg",
+                "http://rent.quebec-quebec.net/6.jpg",
+                "http://rent.quebec-quebec.net/7.jpg",
+                "http://rent.quebec-quebec.net/8.jpg",
+                "http://rent.quebec-quebec.net/9.jpg",
+                "http://rent.quebec-quebec.net/12.jpg",
+                "http://rent.quebec-quebec.net/14.jpg"
             ];
+            
             const titlesFr = ["Accueil Étudiant & Short-Term Montréal", "Résidence Étudiante Moderne", "Appartement Proche Campus Montréal", "Chambre Spacieuse / 蒙特利尔短租房", "Studio Tout Équipé", "Colocation Idéale / 留学生接待"];
 
-            // 虚拟轻量级生成 200 万数据结构（避免内存溢出，采用按需索引映射）
-            // 提示：为了让浏览器流畅加载 200万 房源，我们使用高效的虚拟渲染映射
             window.getTotalCount = () => 2000000;
             window.getPropertyByIndex = function(i) {
                 const district = montrealDistricts[i % montrealDistricts.length];
@@ -149,12 +152,12 @@
                     city: district,
                     price: 600 + (i * 17) % 950,
                     rating: parseFloat((4.80 + (i % 20) * 0.01).toFixed(2)),
-                    image: images[i % images.length],
+                    image: customImages[i % customImages.length], // 使用您的自定义图片
                     type: propType,
                     guests: 1 + (i % 3),
                     bedrooms: 1 + (i % 2),
                     bathrooms: 1,
-                    description: `Idéal pour les étudiants  à Montréal. Situé à ${district}. Parfait pour une location courte durée (蒙特利尔短租房) et l'accueil des nouveaux arrivants (留学生接待). Contrat bilingue.`,
+                    description: `Idéal pour les étudiants français à Montréal. Situé à ${district}. Parfait pour une location courte durée (蒙特利尔短租房) et l'accueil des nouveaux arrivants (留学生接待). Contrat bilingue.`,
                     seoKeywords: `蒙特利尔租房, 蒙特利尔短租房, 留学生接待, logement étudiant français Montréal`
                 };
             };
