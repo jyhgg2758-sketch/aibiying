@@ -425,3 +425,249 @@
     </script>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Montreal Properties & Listings Modal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+        <!-- Apartment About Section -->
+        <section class="mb-12 text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl font-bold mb-4 lang-en">About the Property</h2>
+            <h2 class="text-3xl font-bold mb-4 lang-fr hidden">À propos du Logement</h2>
+            
+            <p class="text-gray-600 text-lg lang-en">Located in the heart of the city, our charming apartment offers modern amenities, high-speed Wi-Fi, and a breathtaking view. Perfect for couples, business travelers, and small families.</p>
+            <p class="text-gray-600 text-lg lang-fr hidden">Situé au cœur de la ville, notre charmant appartement offre des équipements modernes, une connexion Wi-Fi haut débit et une vue imprenable. Idéal pour les couples, les voyageurs d'affaires et les petites familles.</p>
+            
+            <!-- Language Switcher Bar -->
+            <div class="mt-6 flex justify-center gap-4">
+                <button onclick="setLanguage('en')" id="btn-en" class="px-4 py-1.5 text-sm font-semibold bg-rose-500 text-white rounded-full shadow-sm transition">English</button>
+                <button onclick="setLanguage('fr')" id="btn-fr" class="px-4 py-1.5 text-sm font-semibold bg-gray-200 text-gray-700 rounded-full shadow-sm transition">Français</button>
+            </div>
+        </section>
+
+        <!-- Listings Grid Section -->
+        <section class="mb-16">
+            <h2 class="text-2xl font-bold mb-8 text-center lang-en">Our Featured Montreal Properties (All 5 Rooms)</h2>
+            <h2 class="text-2xl font-bold mb-8 text-center lang-fr hidden">Nos Propriétés en Vedette à Montréal (5 Chambres)</h2>
+                        
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+                <!-- Listing 1 -->
+                <a href="https://www.airbnb.com/h/sunnyroom-urban" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-52843295/original/2e17013a-932f-4791-a5aa-ab5872dd43e6.jpeg?im_w=960');">
+                        <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 text-xs font-medium rounded-lg">Listing 1</span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-sm mb-2 group-hover:text-rose-600 transition-colors">CozyRoom / Walk to Metro / DT / WiFi 500M / Free Parking</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">Spacious and bright room filled with natural sunlight near downtown. Includes high-speed Wi-Fi and free parking.</p>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-en">View on Airbnb &rarr;</span>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-fr hidden">Voir sur Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- Listing 2 -->
+                <a href="https://www.airbnb.com/h/fundes" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1632091531808758521/original/b252b296-f4ba-4ea7-a8a0-56302bf59dd9.jpeg?im_w=960');">
+                        <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 text-xs font-medium rounded-lg">Listing 2</span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-sm mb-2 group-hover:text-rose-600 transition-colors">Fundes Exclusive Stay / Montreal Center</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">Conveniently located private room offering great access to local hubs, clean facilities, and reliable connection.</p>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-en">View on Airbnb &rarr;</span>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-fr hidden">Voir sur Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- Listing 3 -->
+                <a href="https://www.airbnb.com/h/dtroom1" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1617489146411717035/original/827785a1-79bd-4fb5-b13e-bd660769f91b.jpeg?im_w=960');">
+                        <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 text-xs font-medium rounded-lg">Listing 3</span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-sm mb-2 group-hover:text-rose-600 transition-colors">Downtown / Clean Private / WiFi 400M / Free Parking / Room</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">Exceptionally clean private room with 1 king bed and dedicated workspace in a quiet, safe downtown neighborhood.</p>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-en">View on Airbnb &rarr;</span>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-fr hidden">Voir sur Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- Listing 4 -->
+                <a href="https://www.airbnb.com/h/dtroom2" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1657563545877539615/original/1817cd51-91a6-4ed7-a895-a47a03c7b9a4.jpeg?im_w=960');">
+                        <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 text-xs font-medium rounded-lg">Listing 4</span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-sm mb-2 group-hover:text-rose-600 transition-colors">Peaceful Skyline Room 2 / DT Montreal</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">Cozy vibe with prime location, easy access to transport, shopping districts, and local cafés.</p>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-en">View on Airbnb &rarr;</span>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-fr hidden">Voir sur Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- Listing 5 -->
+                <a href="https://www.airbnb.com/h/sunnyroom-urban" target="_blank" class="bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 flex flex-col group border border-gray-100">
+                    <div class="h-48 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1657563545877539615/original/1817cd51-91a6-4ed7-a895-a47a03c7b9a4.jpeg?im_w=960');">
+                        <span class="absolute top-3 left-3 bg-black/60 backdrop-blur-md text-white px-2.5 py-1 text-xs font-medium rounded-lg">Listing 5</span>
+                    </div>
+                    <div class="p-4 flex flex-col flex-grow">
+                        <h3 class="font-bold text-sm mb-2 group-hover:text-rose-600 transition-colors">Urban Sunshine Retreat / Extra Space</h3>
+                        <p class="text-xs text-gray-500 mb-4 flex-grow">Bright interior layout, excellent security features, quiet environment, perfect for your Montreal stay.</p>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-en">View on Airbnb &rarr;</span>
+                        <span class="text-xs font-semibold text-rose-600 mt-auto lang-fr hidden">Voir sur Airbnb &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Call To Action Button triggering the Modal -->
+        <div class="text-center pb-12">
+            <button id="openModalBtn" class="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-bold px-8 py-4 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
+                <span class="lang-en">View All 5 Rooms in Popup</span>
+                <span class="lang-fr hidden">Voir les 5 Chambres en Fenêtre</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- 🚨 弹窗结构：内部直接平铺 5 个房间矩阵 🚨 -->
+    <div id="bookingModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 opacity-0 pointer-events-none transition-opacity duration-300">
+        <!-- 弹窗容器（调宽为 max-w-5xl 以完美容纳多列房源） -->
+        <div id="modalContainerBox" class="bg-white w-full max-w-5xl rounded-2xl p-6 md:p-8 shadow-2xl relative transform scale-95 transition-transform duration-300 max-h-[90vh] overflow-y-auto">
+            
+            <!-- Close Button -->
+            <button id="closeModalBtn" class="absolute top-5 right-5 text-gray-400 hover:text-gray-700 bg-gray-100 hover:bg-gray-200 w-9 h-9 rounded-full flex items-center justify-center font-bold text-lg transition-colors cursor-pointer z-10">
+                &times;
+            </button>
+
+            <!-- Modal Heading -->
+            <h3 class="text-2xl font-bold mb-6 text-gray-900 pr-12">
+                <span class="lang-en">Limited-Time Offer – Great Value Stay</span>
+                <span class="lang-fr hidden">Sélectionnez Votre Chambre / Nos 5 Propriétés</span>
+            </h3>
+
+            <!-- 弹窗内的 5 个房间网格展示区 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                <!-- 房源 1 -->
+                <a href="https://www.airbnb.com/h/sunnyroom-urban" target="_blank" class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-gray-200 group">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-52843295/original/2e17013a-932f-4791-a5aa-ab5872dd43e6.jpeg?im_w=960');">
+                        <span class="absolute top-2 left-2 bg-black/60 text-white px-2 py-0.5 text-[10px] font-medium rounded">Listing 1</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xs mb-1 group-hover:text-rose-600 transition-colors line-clamp-2">CozyRoom / Walk to Metro</h4>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-en">Airbnb &rarr;</span>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-fr hidden">Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- 房源 2 -->
+                <a href="https://www.airbnb.com/h/fundes" target="_blank" class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-gray-200 group">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1632091531808758521/original/b252b296-f4ba-4ea7-a8a0-56302bf59dd9.jpeg?im_w=960');">
+                        <span class="absolute top-2 left-2 bg-black/60 text-white px-2 py-0.5 text-[10px] font-medium rounded">Listing 2</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xs mb-1 group-hover:text-rose-600 transition-colors line-clamp-2">Fundes Exclusive Stay</h4>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-en">Airbnb &rarr;</span>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-fr hidden">Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- 房源 3 -->
+                <a href="https://www.airbnb.com/h/dtroom1" target="_blank" class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-gray-200 group">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1617489146411717035/original/827785a1-79bd-4fb5-b13e-bd660769f91b.jpeg?im_w=960');">
+                        <span class="absolute top-2 left-2 bg-black/60 text-white px-2 py-0.5 text-[10px] font-medium rounded">Listing 3</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xs mb-1 group-hover:text-rose-600 transition-colors line-clamp-2">Downtown / Clean Private</h4>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-en">Airbnb &rarr;</span>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-fr hidden">Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- 房源 4 -->
+                <a href="https://www.airbnb.com/h/dtroom2" target="_blank" class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-gray-200 group">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1657563545877539615/original/1817cd51-91a6-4ed7-a895-a47a03c7b9a4.jpeg?im_w=960');">
+                        <span class="absolute top-2 left-2 bg-black/60 text-white px-2 py-0.5 text-[10px] font-medium rounded">Listing 4</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xs mb-1 group-hover:text-rose-600 transition-colors line-clamp-2">Peaceful Skyline Room 2</h4>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-en">Airbnb &rarr;</span>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-fr hidden">Airbnb &rarr;</span>
+                    </div>
+                </a>
+                <!-- 房源 5 -->
+                <a href="https://www.airbnb.com/h/sunnyroom-urban" target="_blank" class="bg-gray-50 rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-200 flex flex-col border border-gray-200 group">
+                    <div class="h-32 bg-cover bg-center relative" style="background-image: url('https://a0.muscache.com/im/pictures/hosting/Hosting-1657563545877539615/original/1817cd51-91a6-4ed7-a895-a47a03c7b9a4.jpeg?im_w=960');">
+                        <span class="absolute top-2 left-2 bg-black/60 text-white px-2 py-0.5 text-[10px] font-medium rounded">Listing 5</span>
+                    </div>
+                    <div class="p-3 flex flex-col flex-grow">
+                        <h4 class="font-bold text-xs mb-1 group-hover:text-rose-600 transition-colors line-clamp-2">Urban Sunshine Retreat</h4>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-en">Airbnb &rarr;</span>
+                        <span class="text-[11px] font-semibold text-rose-600 mt-auto lang-fr hidden">Airbnb &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ⚙️ 统一控制脚本（页面打开后自动弹窗展示这 5 个房间） -->
+    <script>
+        const modal = document.getElementById('bookingModal');
+        const modalBox = document.getElementById('modalContainerBox');
+        const openBtn = document.getElementById('openModalBtn');
+        const closeBtn = document.getElementById('closeModalBtn');
+
+        function openModal() {
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            modal.classList.add('opacity-100', 'pointer-events-auto');
+            modalBox.classList.remove('scale-95');
+            modalBox.classList.add('scale-100');
+        }
+
+        function closeModal() {
+            modal.classList.remove('opacity-100', 'pointer-events-auto');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            modalBox.classList.remove('scale-100');
+            modalBox.classList.add('scale-95');
+        }
+
+        // 绑定点击事件
+        openBtn.addEventListener('click', openModal);
+        closeBtn.addEventListener('click', closeModal);
+
+        // 点击弹窗外部灰色区域关闭
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                closeModal();
+            }
+        });
+
+        // 语言切换功能
+        function setLanguage(lang) {
+            const enElements = document.querySelectorAll('.lang-en');
+            const frElements = document.querySelectorAll('.lang-fr');
+            const btnEn = document.getElementById('btn-en');
+            const btnFr = document.getElementById('btn-fr');
+
+            if (lang === 'en') {
+                enElements.forEach(el => el.classList.remove('hidden'));
+                frElements.forEach(el => el.classList.add('hidden'));
+                btnEn.className = "px-4 py-1.5 text-sm font-semibold bg-rose-500 text-white rounded-full shadow-sm transition";
+                btnFr.className = "px-4 py-1.5 text-sm font-semibold bg-gray-200 text-gray-700 rounded-full shadow-sm transition";
+            } else {
+                frElements.forEach(el => el.classList.remove('hidden'));
+                enElements.forEach(el => el.classList.add('hidden'));
+                btnFr.className = "px-4 py-1.5 text-sm font-semibold bg-rose-500 text-white rounded-full shadow-sm transition";
+                btnEn.className = "px-4 py-1.5 text-sm font-semibold bg-gray-200 text-gray-700 rounded-full shadow-sm transition";
+            }
+        }
+
+        // 🚀 **页面打开后 0.3 秒自动弹出包含这 5 个房间的窗口**
+        window.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => {
+                openModal();
+            }, 300);
+        });
+    </script>
+</body>
+</html>
+
